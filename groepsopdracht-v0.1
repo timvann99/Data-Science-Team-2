@@ -1,0 +1,15 @@
+#het inladen van de csv file's zodat de data bruikbaar is
+testData <- read.csv("C:\\Users\\timva\\Documents\\Belangrijk\\Studie\\Minor\\test.csv")
+trainData <- read.csv("C:\\Users\\timva\\Documents\\Belangrijk\\Studie\\Minor\\train.csv")
+
+#het toevoegen van de Survived kolom met de waardes 0
+testData$Survived <- c(0)
+trainData$Survived <- c(0)
+
+#summary weergeven om te checken of de nieuwe kolom is toegevoegd 
+summary(testData)
+summary(trainData)
+
+#twee kolommen selecteren: Passengerid en Survived 
+testPasSur <- data.frame(testData$PassengerId, testData$Survived)
+trainPasSur <- data.frame(trainData$PassengerId, trainData$Survived)
